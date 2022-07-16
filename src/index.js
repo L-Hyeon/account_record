@@ -1,37 +1,53 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
+const { app, BrowserWindow, ipcMain } = require('electron');
+const ipc = ipcMain;
+const path = require('path');
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-// eslint-disable-next-line global-require
-if (require("electron-squirrel-startup")) {
-	app.quit();
+if (require('electron-squirrel-startup')) {
+  app.quit();
 }
 
 const createWindow = () => {
-	// Create the browser window.
-	const mainWindow = new BrowserWindow({
-		width: 1240,
-		height: 800,
-		webPreferences: {
-			preload: path.join(__dirname, "preload.js"),
-		},
-	});
+  const mainWindow = new BrowserWindow({
+    width: 1320,
+    height: 800,
+    // frame: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation : false
+    },
+  });
 
-	mainWindow.loadFile(path.join(__dirname, "index.html"));
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.webContents.openDevTools();
 
-	mainWindow.webContents.openDevTools();
+  ipc.on('minimizeApp', ()=>{
+    mainWindow.minimize();
+  })
+
+  ipc.on('maximizeApp', ()=>{
+    if(mainWindow.isMaximized()){
+      mainWindow.restore();
+    } else {
+      mainWindow.maximize();
+    }
+  })
+
+  ipc.on('closeApp', ()=>{
+    mainWindow.close();
+  })
 };
 
-app.on("ready", createWindow);
+app.on('ready', createWindow);
 
-app.on("window-all-closed", () => {
-	if (process.platform !== "darwin") {
-		app.quit();
-	}
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
 
-app.on("activate", () => {
-	if (BrowserWindow.getAllWindows().length === 0) {
-		createWindow();
-	}
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
 });
