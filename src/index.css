@@ -69,6 +69,10 @@ body {
 .list-view {
 	width: 900px;
 	height: 720px;
+	overflow-y: scroll;
+}
+.list-view::-webkit-scrollbar {
+	display: none;
 }
 
 .week-title {
