@@ -1,4 +1,11 @@
 @font-face {
+	font-family: 'Cafe24Ssurround';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: "Cafe24SsurroundAir";
 	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
 		format("woff");
@@ -7,9 +14,10 @@
 }
 
 body {
-	font-family: "Cafe24SsurroundAir";
+	font-family: "Cafe24Ssurround";
 	box-sizing: border-box;
 	margin: 0px;
+	background-color: #14a67c;
 }
 
 .title-bar {
@@ -49,4 +57,88 @@ body {
 
 .draggable {
 	-webkit-app-region: drag;
+}
+
+.body {
+	display: flex;
+	justify-content: space-between;
+	height: 740px;
+	padding: 30px;
+}
+
+.list-view {
+	width: 900px;
+	height: 720px;
+}
+
+.week-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px 0px 10px;
+	height: 50px;
+	color: white;
+	font-size: 22px;
+	border-bottom: 1px solid white;
+}
+
+.item {
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+	padding: 0 10px 0 10px;
+}
+
+.date {
+	font-size: 18px;
+	color: #21886A;
+}
+
+.content {
+	height: 70px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #ffffffcd;
+	width: 280px;
+	height: 720px;
+	padding: 10px;
+}
+
+.month {
+	font-size: 24px;
+	color: black;
+}
+
+.weeks {
+	display: flex;
+	flex-direction: column;
+	font-size: 22px;
+	font-weight: 500;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+.weeks a {
+	text-decoration: none;
+	color: #21886A;
+}
+.weeks a:hover {
+	color: #ffffff;
+}
+
+.sum {
+	width: 280px;
+	font-size: 24px;
+	text-align: right;
+	color: black;
 }
