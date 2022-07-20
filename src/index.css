@@ -80,11 +80,53 @@ body {
 }
 
 .add-item-modal {
-	width: 600px;
-	height: 500px;
+	width: 280px;
+	height: 230px;
 	background-color: white;
 	z-index: 102;
 	border-radius: 10px;
+	padding: 10px;
+}
+
+.modal-title {
+	font-size: 22px;
+}
+
+.wrapper {
+	margin-top: 10px;
+	width: 280px;
+	height: 144px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.select-week {
+	font-family: "Cafe24SsurroundAir";
+	width: 100px;
+	height: 28px;
+	font-size: 20px;
+}
+
+.input-content {
+	width: 192px;
+	height: 28px;
+	font-family: "Cafe24SsurroundAir";
+	font-size: 20px;
+	text-align: right;
+}
+
+.add-item-submit {
+	font-family: "Cafe24SsurroundAir";
+	font-size: 20px;
+	width: 100px;
+	height: 36px;
+	background-color: #14a67c;
+	border-radius: 10px;
+	border: 0px;
+	color: white;
+	margin: 10px 0 0 180px;
 }
 
 .list-view {
