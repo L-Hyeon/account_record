@@ -8,8 +8,8 @@
 </head>
 
 <body>
-  <header class="title-bar draggable">
-    <div class="win-title prevent-select">가계부</div>
+  <header class="title-bar">
+    <div class="win-title prevent-select draggable">가계부</div>
     <div class="control prevent-select">
       <button class="title-bar-btn" id="win-minimize">
         <img src="./assets/minimize.svg" height="18px" />
@@ -22,8 +22,8 @@
       </button>
     </div>
   </header>
-  <div class="add-item-modal-bg">
-    <div class="add-item-modal">
+  <div id="add-item-modal" class="add-item-modal-bg hidden">
+    <div class="add-item-modal-content">
       <div class="modal-title">등록하기</div>
       <div class="wrapper">
         <select class="select-week">
@@ -83,7 +83,9 @@
       </div>
     </nav>
   </div>
+  
   <script src="./function.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

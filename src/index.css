@@ -31,6 +31,7 @@ body {
 .win-title {
 	font-size: 24px;
 	padding-left: 10px;
+	width: 1172px;
 }
 .control {
 	display: flex;
@@ -77,9 +78,22 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	opacity: 0;
+}
+.add-item-modal-bg.open {
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+.add-item-modal-bg.close {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.add-item-modal-bg.hidden {
+	top:-800px;
 }
 
-.add-item-modal {
+
+.add-item-modal-content {
 	width: 280px;
 	height: 230px;
 	background-color: white;
