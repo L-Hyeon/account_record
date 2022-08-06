@@ -26,43 +26,27 @@
     <div class="add-item-modal-content">
       <div class="modal-title">등록하기</div>
       <div class="wrapper">
-        <select class="select-week">
-          <option value="1">1주차</option>
-          <option value="2">2주차</option>
-          <option value="3">3주차</option>
-          <option value="4">4주차</option>
-          <option value="5">5주차</option>
-        </select>
-        <input type="text" class="input-content" placeholder="어디서">
-        <input type="text" class="input-content" placeholder="얼마나">
+        <input type="date" id="input-date" required />
+        <input type="text" id="input-place" placeholder="어디서" required>
+        <input type="text" id="input-price" placeholder="얼마나" required>
       </div>
       <button class="add-item-submit">등록</button>
     </div>
   </div>
   <div class="body">
     <section class="list-view">
-      <div class="week-block">
-        <div class="week-title" id="1st">1주차</div>
-        <!-- <div class="item">
+      <ul class="item-list">
+        <li class="item">
           <div class="date">2022.06.29</div>
           <div class="content">
             <div class="place">도미노 피자</div>
-            <div class="price">\20,000</div>
+            <div class="price"><span>\</span>20,000</div>
           </div>
-        </div> -->
-      </div>
-      <div class="week-block">
-        <div class="week-title" id="2nd">2주차</div>
-      </div>
-      <div class="week-block">
-        <div class="week-title" id="3rd">3주차</div>
-      </div>
-      <div class="week-block">
-        <div class="week-title" id="4th">4주차</div>
-      </div>
-      <div class="week-block">
-        <div class="week-title" id="5th">5주차</div>
-      </div>
+          <button class="delete-btn">
+            <img id="close-svg" src="./assets/delete.svg" height="30px"/>
+          </button>
+        </li>
+      </ul>
       <div class="add-item-btn">
         <img src="./assets/add.svg" height="40px">
       </div>
@@ -79,11 +63,11 @@
         </div>
       </div>
       <div class="sum">
-        \0
+        ￦0
       </div>
     </nav>
   </div>
-  
+
   <script src="./function.js"></script>
   <script src="./script.js"></script>
 </body>

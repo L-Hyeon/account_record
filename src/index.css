@@ -1,6 +1,7 @@
 @font-face {
-	font-family: 'Cafe24Ssurround';
-	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+	font-family: "Cafe24Ssurround";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff")
+		format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -89,9 +90,8 @@ body {
 	transition: opacity 0.5s;
 }
 .add-item-modal-bg.hidden {
-	top:-800px;
+	top: -800px;
 }
-
 
 .add-item-modal-content {
 	width: 280px;
@@ -116,23 +116,16 @@ body {
 	align-items: flex-end;
 }
 
-.select-week {
-	font-family: "Cafe24SsurroundAir";
-	width: 100px;
-	height: 28px;
-	font-size: 20px;
-}
-
-.input-content {
+.wrapper input {
+	border-radius: 10px;
 	width: 192px;
 	height: 28px;
-	font-family: "Cafe24SsurroundAir";
 	font-size: 20px;
+	font-family: "Cafe24SsurroundAir";
 	text-align: right;
 }
 
 .add-item-submit {
-	font-family: "Cafe24SsurroundAir";
 	font-size: 20px;
 	width: 100px;
 	height: 36px;
@@ -141,6 +134,7 @@ body {
 	border: 0px;
 	color: white;
 	margin: 10px 0 0 180px;
+	cursor: pointer;
 }
 
 .list-view {
@@ -152,15 +146,9 @@ body {
 	display: none;
 }
 
-.week-title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0px 10px 0px 10px;
-	height: 50px;
-	color: white;
-	font-size: 22px;
-	border-bottom: 1px solid white;
+.item-list {
+	list-style: none;
+	padding-left: 0px;
 }
 
 .item {
@@ -172,11 +160,17 @@ body {
 	align-items: center;
 	height: 70px;
 	padding: 0 10px 0 10px;
+	position: relative;
+}
+.item:hover {
+	background-color: #ffffffaa;
+	transition: all 0.5s;
+	padding-right: 50px;
 }
 
 .date {
 	font-size: 18px;
-	color: #21886A;
+	color: #21886a;
 }
 
 .content {
@@ -184,6 +178,24 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	text-align: right;
+}
+
+.delete-btn {
+	position: absolute;
+	z-index: 10;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	height: 100%;
+	padding-right: 20px;
+	text-align: right;
+	cursor: pointer;
+	opacity: 0;
+}
+.delete-btn:hover {
+	opacity: 1;
+	transition: all 0.5s;
 }
 
 .add-item-btn {
@@ -218,7 +230,7 @@ nav {
 
 .month {
 	font-size: 24px;
-	color: #21886A;
+	color: #21886a;
 }
 
 .weeks {
@@ -231,7 +243,7 @@ nav {
 }
 .weeks a {
 	text-decoration: none;
-	color: #21886A;
+	color: #21886a;
 }
 .weeks a:hover {
 	color: #ffffff;
