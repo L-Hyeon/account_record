@@ -35,8 +35,8 @@ const itemPriceElem = document.querySelector("#input-price");
 const listElem = document.querySelector(".item-list");
 const sumElem = document.querySelector(".sum");
 
-let items = [];
-let id = 0;
+var items = [];
+var id = 0;
 
 const addItem = (date, place, price) => {
 	items.unshift({ id: id++, date: date, place: place, price: price });
